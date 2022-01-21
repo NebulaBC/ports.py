@@ -12,8 +12,6 @@ else:
         num = 0
         os.system('iptables -F')
         os.system('iptables -P INPUT DROP')
-        os.system('iptables -P OUTPUT DROP')
-        os.system('iptables -P FORWARD DROP')
         for i in range(0,times):
             os.system(f'iptables -A INPUT -p tcp --dport {ports[num]} -j ACCEPT')
             num=num+1
