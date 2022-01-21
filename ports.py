@@ -17,7 +17,7 @@ else:
             os.system('iptables -I INPUT 2 -p icmp --icmp-type echo-request -j ACCEPT')
             os.system('iptables -A INPUT -p udp --sport 53 -j ACCEPT')
             os.system('sudo iptables -A INPUT -p tcp --sport 53 -j ACCEPT')
-            # uncomment if you want local connections os.system('iptables -A INPUT -i lo -j ACCEPT')
+            os.system('iptables -A INPUT -i lo -j ACCEPT')
             for i in range(0,times):
                 os.system(f'iptables -A INPUT -p tcp --dport {ports[num]} -j ACCEPT')
                 num=num+1
