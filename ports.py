@@ -22,17 +22,18 @@ else:
         else:
             print("You have already run firstrun, please run open")
     elif sys.argv[1] == "open":
-        print('If you have never run this script before please run python3 ports.py firstrun')
-        print('Please enter the ports you wish to open as 1 2 3')
-        ports = [int(x) for x in input().split()]
-        times = len(ports)
-        num = 0
-        for i in range(0,times):
-            os.system(f'iptables -A INPUT -p tcp --dport {ports[num]} -j ACCEPT')
-            num=num+1
-        os.system('netfilter-persistent save && netfilter-persistent reload')
-        print(f'Port(s) {ports} successfully opened.')
-
+        if os.path.exists("/etc/portctl.firstrun") == True:
+            print('Please enter the ports you wish to open as 1 2 3')
+            ports = [int(x) for x in input().split()]
+            times = len(ports)
+            num = 0
+            for i in range(0,times):
+                os.system(f'iptables -A INPUT -p tcp --dport {ports[num]} -j ACCEPT')
+                num=num+1
+            os.system('netfilter-persistent save && netfilter-persistent reload')
+            print(f'Port(s) {ports} successfully opened.')
+        else:
+            print('You have not run ports.py before! Please run it with the argument firstrun instead of open')
     elif sys.argv[1] == 'close':
         print('Please enter the ports you wish to close 1 2 3')
         ports = [int(x) for x in input().split()]
