@@ -5,7 +5,7 @@ if os.geteuid() != 0:
     exit('Please run this script as root!')
 else:
     if sys.argv[1] == 'firstrun':
-        if exists(/etc/portctl.firstrun) == False:
+        if exists("/etc/portctl.firstrun") == False:
             print('Please enter the ports you wish to open as 1 2 3 (REMEMBER TO INCLUDE YOUR SSH PORT!!1!)')
             print('This command will also drop all previous ports opened, so remember to re-open them.')
             ports = [int(x) for x in input().split()]
@@ -21,7 +21,7 @@ else:
             print(f'Port(s) {ports} successfully opened. From now on run python3 ports.py open')
         else:
             print("You have already run firstrun, please run open")
-    elif:
+    elif sys.argv[1] == "open":
         print('If you have never run this script before please run python3 ports.py firstrun')
         print('Please enter the ports you wish to open as 1 2 3')
         ports = [int(x) for x in input().split()]
