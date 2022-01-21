@@ -9,6 +9,7 @@ else:
         ports = [int(x) for x in input().split()]
         times = len(ports)
         num = 0
+        os.system('iptables -F')
         for i in range(0,times):
             os.system(f'iptables -A INPUT -p tcp --dport {ports[num]} -j ACCEPT')
             num=num+1
