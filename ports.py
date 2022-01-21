@@ -5,7 +5,7 @@ if os.geteuid() != 0:
     exit('Please run this script as root!')
 else:
     if sys.argv[1] == 'open':
-        print('Please enter the ports you wish to open as 1 2 3')
+        print('Please enter the ports you wish to open as 1 2 3 (REMEMBER TO INCLUDE YOUR SSH PORT!!1!)')
         ports = [int(x) for x in input().split()]
         times = len(ports)
         num = 0
