@@ -10,6 +10,9 @@ else:
         times = len(ports)
         num = 0
         os.system('iptables -F')
+        os.system('iptables -P INPUT DENY')
+        os.system('iptables -P OUTPUT DENY')
+        os.system('iptables -P FORWARD DENY')
         for i in range(0,times):
             os.system(f'iptables -A INPUT -p tcp --dport {ports[num]} -j ACCEPT')
             num=num+1
