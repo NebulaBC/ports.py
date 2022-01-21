@@ -6,6 +6,7 @@ if os.geteuid() != 0:
 else:
     if sys.argv[1] == 'open':
         print('Please enter the ports you wish to open as 1 2 3 (REMEMBER TO INCLUDE YOUR SSH PORT!!1!)')
+        print('This command will also drop all previous ports opened, so remember to re-open them.')
         ports = [int(x) for x in input().split()]
         times = len(ports)
         num = 0
