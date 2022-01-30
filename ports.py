@@ -28,12 +28,13 @@ else:
             print("You have already run firstrun, please run open")
     elif sys.argv[1] == "open":
         if os.path.exists("/etc/portctl.firstrun") == True:
-            print('Please enter the ports you wish to open as 1 2 3')
+            print('Please enter the ports you wish to open as 1 2 3 (this only opens tcp and udp ports, so modify the script if you need anything else)')
             ports = [int(x) for x in input().split()]
             times = len(ports)
             num = 0
             for i in range(0,times):
                 os.system(f'iptables -A INPUT -p tcp --dport {ports[num]} -j ACCEPT')
+                os.system(f'iptables -A INPUT -p udp --dport {ports[num]} -j ACCEPT')
                 num=num+1
             os.system('netfilter-persistent save && netfilter-persistent reload')
             print(f'Port(s) {ports} successfully opened.')
