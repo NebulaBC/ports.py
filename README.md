@@ -7,6 +7,6 @@ this is made because UFW is a nightmare on *some* builds of Ubuntu 20.04, and so
 1. `sudo su`
 2. `apt update && apt upgrade`
 3. `wget https://ports.neb.cx/ports.py`
-4. `python3 ports.py firstrun`
+4. `python3 ports.py firstrun` (make extra sure to enter your SSH port!)
 
 After the first run of ports.py, you can run `python3 ports.py open` or `python3 ports.py close`.
