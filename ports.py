@@ -1,6 +1,5 @@
 import os
 import sys
-import npyscreen
 
 if os.geteuid() != 0:
     exit('Please run this script as root!')
