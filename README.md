@@ -10,3 +10,5 @@ this is made because UFW is a nightmare on *some* builds of Ubuntu 20.04, and so
 4. `python3 ports.py firstrun` (make extra sure to enter your SSH port!)
 
 After the first run of ports.py, you can run `python3 ports.py open` or `python3 ports.py close`.
+
+ports.py is currently working. Feel free to use ports.py with the instructions above.
