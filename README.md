@@ -1,4 +1,4 @@
-# ubuntu-port-opener
+# ports.py
 
 This script was made for a friend, and occasional personal use. Do not complain, or ask for support!
 
