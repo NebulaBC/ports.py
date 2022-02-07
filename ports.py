@@ -1,7 +1,6 @@
 import os
 import sys
 
-# preparing for term cli
 if os.geteuid() != 0:
     exit('Please run this script as root!')
 else:
