@@ -46,7 +46,7 @@ else:
         times = len(ports)
         num = 0
         for i in range(0,times):
-            os.system(f'iptables -A INPUT -p tcp --dport {ports[num]} -j DENY')
+            os.system(f'iptables -A INPUT -p tcp --dport {ports[num]} -j REJECT')
             num=num+1
         os.system('netfilter-persistent save && netfilter-persistent reload')
         print(f'Port(s) {ports} successfully closed.')
