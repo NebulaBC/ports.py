@@ -3,6 +3,8 @@
 
 Do not ask for support. This script was created to help solve an issue for a friend with some cloud providers, and is provided "as-is".
 
+I am not liable for data loss or access loss. Use at your own risk.
+
 `wget https://ports.neb.cx/ports.py`
 
 `python3 ports.py firstrun`
