@@ -57,6 +57,7 @@ else:
         num = 0
         for i in range(0, times):
             os.system(f"iptables -D INPUT -p tcp --dport {ports[num]} -j ACCEPT")
+            os.system(f"iptables -D INPUT -p udp --dport {ports[num]} -j ACCEPT")
             num = num + 1
         os.system("netfilter-persistent save && netfilter-persistent reload")
         print(f"Port(s) {ports} successfully closed.")
